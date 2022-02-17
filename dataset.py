@@ -294,9 +294,9 @@ class Yolo_dataset(Dataset):
                 bboxes = np.array(self.truth.get(img_path), dtype=np.float)
                 img_path = os.path.join(self.cfg.dataset_dir, img_path)
             img = cv2.imread(img_path)
-            img = cv2.cvtColor(img, cv2.COLOR_BGR2RGB)
             if img is None:
                 continue
+            img = cv2.cvtColor(img, cv2.COLOR_BGR2RGB)
             oh, ow, oc = img.shape
             dh, dw, dc = np.array(np.array([oh, ow, oc]) * self.cfg.jitter, dtype=np.int)
 
@@ -431,8 +431,8 @@ def get_image_id(filename:str) -> int:
 
     print("You could also create your own 'get_image_id' function.")
     # print(filename)
-    parts = filename.split('/')
-    id = int(parts[-1][0:-4])
+    parts = filename.split("/")[-1].split(".")[0].split('_')
+    id = int(parts[-1])
     # print(id)
     return id
 
