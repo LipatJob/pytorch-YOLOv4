@@ -35,12 +35,7 @@ def detect_cv2(cfgfile, weightfile, imgfile):
         m.cuda()
 
     num_classes = m.num_classes
-    if num_classes == 20:
-        namesfile = 'data/voc.names'
-    elif num_classes == 80:
-        namesfile = 'data/coco.names'
-    else:
-        namesfile = 'data/x.names'
+    namesfile = 'dataset\scut.names'
     class_names = load_class_names(namesfile)
 
     img = cv2.imread(imgfile)
@@ -148,7 +143,7 @@ def get_args():
     parser.add_argument('-imgfile', type=str,
                         default='./data/mscoco2017/train2017/190109_180343_00154162.jpg',
                         help='path of your image file.', dest='imgfile')
-    parser.add_argument('-torch', type=bool, default=false,
+    parser.add_argument('-torch', type=bool, default=False,
                         help='use torch weights')
     args = parser.parse_args()
 
