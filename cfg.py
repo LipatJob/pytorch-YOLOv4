@@ -22,7 +22,7 @@ Cfg.use_darknet_cfg = True
 Cfg.cfgfile = os.path.join(_BASE_DIR, 'cfg', 'yolov4-custom.cfg')
 
 Cfg.batch = 2
-Cfg.subdivisions = 4
+Cfg.subdivisions = 2
 Cfg.width = 608
 Cfg.height = 608
 Cfg.channels = 3
