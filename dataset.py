@@ -429,7 +429,7 @@ def get_image_id(filename:str) -> int:
     # no = f"{int(no):04d}"
     # return int(lv+no)
 
-    print("You could also create your own 'get_image_id' function.")
+    # print("You could also create your own 'get_image_id' function.")
     # print(filename)
     parts = filename.split("/")[-1].split(".")[0].split('_')
     id = int(parts[-1])
